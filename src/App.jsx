@@ -68,7 +68,7 @@ function App() {
                   <h3>{item.title}</h3>
                   <button onClick={() => {
                     setProductDetail(item),
-                      setProductImgUrl(productList.imageUrl)
+                      setProductImgUrl(item.imageUrl)
                   }} className="detail-btn">查看更多</button>
                 </div>
 
@@ -82,10 +82,7 @@ function App() {
             <h3>{productDetail.title}</h3>
             <p>{productDetail.content}</p>
             <p>售價：${productDetail.price}</p>
-            {
-              productImgUrl ? (<img src={productImgUrl} alt="product-img" />) : (<img src={productDetail.imageUrl} alt="product-img" />)
-
-            }
+            <img src={productImgUrl} alt="product-img" />
             <div className="other-img">
               <img src={productDetail.imageUrl} alt="product-img" onClick={() => setProductImgUrl(productDetail.imageUrl)} />
               {
